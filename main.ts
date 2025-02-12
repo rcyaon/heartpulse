@@ -22,17 +22,17 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
+    I2C_LCD1602.LcdInit(0)
+})
+basic.forever(function () {
+    pulsedet = pins.analogReadPin(AnalogReadWritePin.P2)
+})
+basic.forever(function () {
     if (pulsedet >= 90) {
         I2C_LCD1602.ShowString("Breathe with me", 0, 0)
     } else {
         I2C_LCD1602.ShowString("Your pulse is normal!", 0, 0)
     }
-})
-basic.forever(function () {
-    I2C_LCD1602.LcdInit(0)
-})
-basic.forever(function () {
-    pulsedet = pins.analogReadPin(AnalogReadWritePin.P2)
 })
 basic.forever(function () {
     if (counter == 0 && counter == 0) {
